@@ -35,7 +35,7 @@ The authenticity of host '10.6.XXX.XXX (10.6.XXX.XXX)' can't be established.
 ...
 Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
-Las credenciales seran `usuario` tanto para el nombre de usuario como para la contraseña. Una vez introducidas, cambiaremos la contraseña. En las siguientes conexiones debreremos usar las nuevas credenciales.
+Las credenciales seran `usuario` tanto para el nombre de usuario como para la contraseña. Una vez introducidas, cambiaremos la contraseña. En las siguientes conexiones deberemos usar las nuevas credenciales.
 
 #### 1.2. Cambio de hosts
 
@@ -60,7 +60,7 @@ usuario@ubuntu:~$ sudo reboot
 Connection to 10.6.XXX.XXX closed by remote host.
 Connection to 10.6.XXX.XXX closed.
 ```
-Cambiaremos tambien el fichero de *hosts* en la máquina local para podernos conectar sin necesidad de recordar la ip:
+Cambiaremos también el fichero de *hosts* en la máquina local para podernos conectar sin necesidad de recordar la ip:
 
 ```bash
 raul@raul-VirtualBox:~$ cat /etc/hosts
