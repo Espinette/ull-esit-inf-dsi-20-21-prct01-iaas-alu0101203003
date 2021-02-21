@@ -194,7 +194,7 @@ v15.9.0
 7.5.3
 ```
 
-También podremos instalar una versión concreta que nos interese y cambar entre las versiones instaladas:
+También podremos instalar una versión concreta que nos interese y cambiar entre las versiones instaladascon el comando `nvm list`:
 
 
 ```bash
