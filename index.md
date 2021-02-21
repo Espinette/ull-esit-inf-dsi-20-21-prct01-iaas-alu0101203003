@@ -1,5 +1,4 @@
-# Práctica 1: Configuración de máquina virtual en el IaaS
-## Informe de realización
+# Práctica 1: Configuración de máquina virtual en el IaaS. Informe.
 ## Desarrollo de Sistemas Informáticos 
 ## Raúl Martín Rigor - alu0101203003@ull.edu.es
 
