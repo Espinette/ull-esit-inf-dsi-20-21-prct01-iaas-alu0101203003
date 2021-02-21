@@ -60,6 +60,99 @@ usuario@ubuntu:~$ sudo reboot
 Connection to 10.6.XXX.XXX closed by remote host.
 Connection to 10.6.XXX.XXX closed.
 ```
+Cambiaremos tambien el fichero de *hosts* en la máquina local para podernos conectar sin necesidad de recordar la ip:
+
+```bash
+raul@raul-VirtualBox:~$ cat /etc/hosts
+127.0.0.1	localhost
+127.0.1.1	raul-VirtualBox
+
+raul@raul-VirtualBox:~$ sudo vi /etc/hosts
+
+raul@raul-VirtualBox:~$ cat /etc/hosts
+127.0.0.1	localhost
+127.0.1.1	raul-VirtualBox
+
+10.6.XXX.XXX   iaas-dsi2
+```
+
+#### 1.3. Configuración de claves pública-privada
+
+Si no teníamos un par de claves pública-privada, lo generaremos tomando las opciones por defecto:
+
+```bash
+raul@raul-VirtualBox:~$ ssh-keygen
+```
+Ahora copiaremos esta clave a la máquina virtual:
+
+```bash
+raul@raul-VirtualBox:~$ ssh-copy-id usuario@iaas-dsi2
+The authenticity of host '10.6.XXX.XXX (10.6.XXX.XXX)' can't be established.
+ECDSA key fingerprint is SHA256:XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+    
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'usuario@iaas-dsi2'"
+and check to make sure that only the key(s) you wanted were added.
+```
+Tras haber realizado esto se puede iniciar sesión en la máquina virtual sin necesidad de contraseña con el comando `ssh usuario@iaas-dsi2`. Pasaremos a crear un archivo de configuración para tampoco tener que depender del usuario:
+
+```bash
+raul@raul-VirtualBox:~$ touch ~/.ssh/config 
+raul@raul-VirtualBox:~$ vi ~/.ssh/config
+raul@raul-VirtualBox:~$ cat ~/.ssh/config
+Host iaas-dsi2
+  HostName iaas-dsi2
+  User usuario
+```
+Finalmente podremos iniciar sesión con este simple comando: `ssh iaas-dsi2`
+
+(Tener en cuenta que habrá que generar las claves pública-privada también en la máquina virtual).
+
+### 2. Configuración de git.
+
+#### 2.1. Instalación y configuración
+
+El primer paso es instalar git en la máquina virtual:
+
+```bash
+usuario@iaas-dsi2:~$ sudo apt install git
+```
+Configuraremos git con nuestro usuario y email:
+
+```bash
+usuario@iaas-dsi2:~$ git config --global user.name "alu0101203003"
+usuario@iaas-dsi2:~$ git config --global user.email alu0101203003@ull.edu.es
+usuario@iaas-dsi2:~$ git config --list
+user.name=alu0101203003
+user.email=alu0101203003@ull.edu.es
+```
+
+#### 2.2. Configuración del prompt de la terminal
+
+Configuremos el prompt de la terminal para que nos muestre en la rama que nos encontramos del repositorio siguiendo las instrucciones del archivo [git-prompt.sh](https://github.com/git/git/blob/master/contrib/completion/git-prompt.sh) para `bash` (añadiendo las 2 lineas que se muestran a continuación al final del archivo .bashrc) :
+
+```bash
+usuario@iaas-dsi2:~$ mv git-prompt.sh .git-prompt.sh
+usuario@iaas-dsi2:~$ vi .bashrc
+usuario@iaas-dsi2:~$ tail .bashrc
+...
+source ~/.git-prompt.sh
+PS1='\[\033]0;\u@\h:\w\007\]\[\033[0;34m\][\[\033[0;31m\]\w\[\033[0;32m\]($(git branch 2>/dev/null | sed -n "s/\* \(.*\)/\1/p"))\[\033[0;34m\]]$'
+
+usuario@iaas-dsi2:~$ exec bash -l
+[~()]$
+```
+Para comprobar que el prompt funciona correctamente lo usaremos con el repositorio de GitHub. 
+Primero copiaremos la clave pública de la máquina virtual que habíamos generado previamente:
+
+```bash
+[~()]$cat ~/.ssh/id_rsa.pub
+```
+Esta clave la añadiremos en nuestro apartado de claves ssh de nuestro perfil de GitHub:
+
+![add key](https://docs.github.com/assets/images/help/settings/ssh-key-paste.png)
 
 
 
