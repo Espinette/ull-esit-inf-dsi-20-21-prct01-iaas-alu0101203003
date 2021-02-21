@@ -4,7 +4,7 @@
 
 ### Introducción
 
-
+En este informe se resumen las actividades realizadas en la **práctica 1** para configurar la máquina virtual para el inicio de sesión remoto ( mediante `ssh`) así como instalar los servicios de git y *Node.js* .
 
 ### Markdown
 
