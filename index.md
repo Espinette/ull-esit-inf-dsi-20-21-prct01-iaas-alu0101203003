@@ -4,11 +4,24 @@
 
 ### Introducción
 
-En este informe se resumen las actividades realizadas en la **práctica 1** para configurar la máquina virtual para el inicio de sesión remoto ( mediante `ssh`) así como instalar los servicios de git y *Node.js* .
+En este informe se resumen las actividades realizadas en la **práctica 1** para configurar la máquina virtual para el **inicio de sesión remoto** ( mediante `ssh`) así como instalar los servicios de *git* y *Node.js* .
 
-### Markdown
+### Objetivos
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+Al finalizar la práctica, habremos completado los siguientes objetivos:
+
+* dxscs
+* ccscs
+* cscs
+
+
+
+
+
+
+
+
+
 
 ```markdown
 Syntax highlighted code block
