@@ -194,7 +194,7 @@ v15.9.0
 7.5.3
 ```
 
-También podremos instalar una versión concreta que nos interese y cambiar entre las versiones instaladascon el comando `nvm list`:
+También podremos instalar una versión concreta que nos interese y cambiar entre las versiones instaladas con el comando `nvm list`:
 
 
 ```bash
@@ -234,8 +234,27 @@ v15.9.0
 [~()]$npm --version
 7.5.3
 ```
+### Conclusiones
+
+Tras terminar esta práctica se acaba teniendo un conocimiento básico muy útil sobre git, una herramienta primordial que nos ayudará a gestionar infinidad de proyectos a lo largo de nuestra carrera académica y profesional eficientemente.
+
+En lo referente a la asignatura, la máquina virtual ha quedado correctamente configurada para poder realizar las prácticas siguientes.
 
 ### Bibliografía
+
+A continuación se muestra una serie de recursos que han sido de gran utilidad para la realización de la práctica y de este informe:
+
+
+Recurso| Dirección
+-------|----------
+Guía de la práctica | https://ull-esit-inf-dsi-2021.github.io/prct01-iaas/
+Guía de Markdown | https://guides.github.com/features/mastering-markdown/
+Jekyll | https://jekyllrb.com/
+Servicio IaaS ULL | https://www.ull.es/servicios/stic/category/iaas/
+Libro de Git de Scott Chacon | https://git-scm.com/book/es/v2
+Curso GitHub First Week on GitHub | https://lab.github.com/githubtraining/first-week-on-github
+
+
 
 
 
