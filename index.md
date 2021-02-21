@@ -10,9 +10,25 @@ En este informe se resumen las actividades realizadas en la **práctica 1** para
 
 Al finalizar la práctica, habremos completado los siguientes objetivos:
 
-* dxscs
-* ccscs
-* cscs
+* Tener la máquina virtual configurada de manera que podamos acceder a ella solo con el nombre de usuario.
+* Tener el repositorio remoto de GitHub enlazado a la maquina virtual.
+* Tener configurado el prompt de la terminal para que aparezca la rama actual en la que nos encontramos del repositorio.
+* Tener instalado *Node.js*.
+* Estar familiarizados con el uso de todas las herramientas involucradas en el cumplimiento de los objetivos mencionados anteriormente.
+
+### 1. Configuración inicial de la máquina virtual.
+
+## 1.1. Primera conexión
+
+La máquina virtual se encuentra alojada en el servicio *IaaS* de la ULL. Para acceder a este servicio fuera de la universidad, es necesario conectarse a la vpn. El proceso de la configuaración de la vpn varía según el sistema operativo desde el que se vaya a realizar ( adjunto el [enlace](https://www.ull.es/servicios/stic/2020/12/01/servicio-de-vpn-de-la-ull/) donde se explica como configurarlo para cada caso).
+
+Una vez conectados a la vpn haremos uso del [Servicio IaaS de la ULL](https://iaas.ull.es/ovirt-engine/sso/login.html) para arrancar la máquina.
+
+Cuando se haya encendido, podemos acceder a la máquina mediante una conexión ssh con la ip asociada a ella encontrada en el apartado de *interfaces de red*:
+
+´´´bash
+ssh usuario@XX.X.XXX.XXX
+´´´
 
 
 
