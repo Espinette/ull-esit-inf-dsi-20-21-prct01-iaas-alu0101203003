@@ -209,6 +209,9 @@ Now using node v12.0.0 (npm v6.9.0)
 v12.0.0
 [~()]$npm --version
 6.9.0
+```
+
+```bash
 [~()]$nvm list
 ->      v12.0.0
         v15.9.0
