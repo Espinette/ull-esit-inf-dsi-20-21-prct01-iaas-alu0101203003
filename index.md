@@ -154,5 +154,85 @@ Esta clave la añadiremos en nuestro apartado de claves ssh de nuestro perfil de
 
 ![add key](https://docs.github.com/assets/images/help/settings/ssh-key-paste.png)
 
+Ahora clonaremos el repositorio y comprobaremos que funciona (se verá en el paréntesis la rama actual):
+
+```bash
+[~()]$git clone git@github.com:ULL-ESIT-INF-DSI-2021/prct01-iaas-vscode.git
+...
+
+[~()]$ls
+prct01-iaas-vscode
+[~()]$cd prct01-iaas-vscode/
+[~/prct01-iaas-vscode(main)]$
+```
+
+### 3. Configuración Node.js.
+
+Instalaremos el gestor de versiones de Node.js para poder, en un futuro, ejecutar códigos desarrollados en JavaScript y sus variantes. Comprobaremos que lo hemos instalado correctamente con el comando `nvm --version`:
+
+```bash
+[~()]$wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+...
+[~()]$exec bash -l
+[~()]$nvm --version
+0.37.2
+```
+Con la ayuda de *nvm* instalaremos la última versión de Node.js:
+
+```bash
+[~()]$nvm install node
+Downloading and installing node v15.9.0...
+Downloading https://nodejs.org/dist/v15.9.0/node-v15.9.0-linux-x64.tar.xz...
+################################################################ 100,0%
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v15.9.0 (npm v7.5.3)
+Creating default alias: default -> node (-> v15.9.0)
+[~()]$node --version
+v15.9.0
+[~()]$npm --version
+7.5.3
+```
+
+También podremos instalar una versión concreta que nos interese y cambar entre las versiones instaladas:
+
+
+```bash
+[~()]$nvm install 12.0.0
+Downloading and installing node v12.0.0...
+Downloading https://nodejs.org/dist/v12.0.0/node-v12.0.0-linux-x64.tar.xz...
+################################################################ 100,0%
+Computing checksum with sha256sum
+Checksums matched!
+Now using node v12.0.0 (npm v6.9.0)
+[~()]$node --version
+v12.0.0
+[~()]$npm --version
+6.9.0
+[~()]$nvm list
+->      v12.0.0
+        v15.9.0
+default -> node (-> v15.9.0)
+iojs -> N/A (default)
+unstable -> N/A (default)
+node -> stable (-> v15.9.0) (default)
+stable -> 15.9 (-> v15.9.0) (default)
+lts/* -> lts/fermium (-> N/A)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.17.1 (-> N/A)
+lts/carbon -> v8.17.0 (-> N/A)
+lts/dubnium -> v10.23.3 (-> N/A)
+lts/erbium -> v12.20.2 (-> N/A)
+lts/fermium -> v14.15.5 (-> N/A)
+[~()]$nvm use v15.9.0 
+Now using node v15.9.0 (npm v7.5.3)
+[~()]$node --version
+v15.9.0
+[~()]$npm --version
+7.5.3
+```
+
+### Bibliografía
+
 
 
