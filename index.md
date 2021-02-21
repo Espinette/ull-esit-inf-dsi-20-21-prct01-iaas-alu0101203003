@@ -4,7 +4,7 @@
 
 ### Introducción
 
-En este informe se resumen las actividades realizadas en la **práctica 1** para configurar la máquina virtual para el **inicio de sesión remoto** ( mediante `ssh`) así como instalar los servicios de *git* y *Node.js* .
+En este informe se resumen las actividades realizadas en la **práctica 1** para configurar la máquina virtual para el **inicio de sesión remoto** ( mediante *ssh*) así como instalar los servicios de *git* y *Node.js* .
 
 ### Objetivos
 
@@ -26,42 +26,40 @@ Una vez conectados a la vpn haremos uso del [Servicio IaaS de la ULL](https://ia
 
 Cuando se haya encendido, podemos acceder a la máquina mediante una conexión ssh con la ip asociada a ella encontrada en el apartado de *interfaces de red*:
 ```bash
-ssh usuario@XX.X.XXX.XXX
+ssh usuario@10.6.XXX.XXX
+```
+Y escribiremos `yes` o la letra `y` para responder a la siguiente pregunta y conectarnos:
+
+```bash
+The authenticity of host '10.6.XXX.XXX (10.6.XXX.XXX)' can't be established.
+...
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+```
+Las credenciales seran `usuario` tanto para el nombre de usuario como para la contraseña. Una vez introducidas, cambiaremos la contraseña. En las siguientes conexiones debreremos usar las nuevas credenciales.
+
+#### 1.2. Cambio de hosts
+
+Primeramente cambiaremos el nombre de host de la máquina virtual de *ubuntu* a *iaas-dsi2* :
+
+```bash
+usuario@ubuntu:~$ cat /etc/hostname
+ubuntu
+usuario@ubuntu:~$ sudo vim /etc/hostname
+usuario@ubuntu:~$ cat /etc/hostname
+iaas-dsi2
+```
+Será necesario reiniciar la máquina para hacer efectivos los cambios, tambien la actualizaremos:
+
+```bash
+usuario@ubuntu:~$ sudo apt update
+
+usuario@ubuntu:~$ sudo apt upgrade
+```
+```bash
+usuario@ubuntu:~$ sudo reboot
+Connection to 10.6.XXX.XXX closed by remote host.
+Connection to 10.6.XXX.XXX closed.
 ```
 
 
 
-
-
-
-
-
-
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ULL-ESIT-INF-DSI-2021/ull-esit-inf-dsi-20-21-prct01-iaas-alu0101203003/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
